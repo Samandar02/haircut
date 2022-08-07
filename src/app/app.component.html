@@ -24,7 +24,59 @@
     </div>
 </nav>
 <section>
-    <div class="hero one-screen">
+    <div class="hero">
+        <owl-carousel-o [options]="heroOptions">
+            <ng-container>
+                <ng-template carouselSlide>
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            WE WILL KEEP YOU AN AWESOME LOOK
+                        </h1>
+                        <div class="hero-text">
+                            <p class="">
+                                <span class="material-symbols-outlined">
+                                    pin_drop
+                                </span>
+                                123 STREET, NEW YORK, USA
+                            </p>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    call
+                                </span>
+                                +012 345 67890
+                            </p>
+                        </div>
+                    </div>
+                    <img src="assets/carousel.jpg">
+                </ng-template>
+            </ng-container>
+            <ng-container>
+                <ng-template carouselSlide>
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>LUXURY HAIRCUT AT AFFORDABLE PRICE
+                        </h1>
+                        <div class="hero-text">
+                            <p class="">
+                                <span class="material-symbols-outlined">
+                                    pin_drop
+                                </span>
+                                123 STREET, NEW YORK, USA
+                            </p>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    call
+                                </span>
+                                +012 345 67890
+                            </p>
+                        </div>
 
+                    </div>
+                    <img src="assets/carousel-1.jpg">
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
     </div>
 </section>

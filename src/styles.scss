@@ -27,3 +27,20 @@ a{
         color: var(--red);
     }
 }
+
+.owl-next{
+    background-color: transparent !important;
+    position: absolute;
+    top: 40% !important;
+    right: 72px;
+    font-size: 72px !important;
+    font-weight: 100;
+}
+.owl-prev{
+    font-weight: 100;
+    background-color: transparent !important;
+    position: absolute;
+    top: 40% !important;
+    left: 72px;
+    font-size: 72px !important;
+}

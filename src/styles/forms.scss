@@ -1,0 +1,17 @@
+@import "./mixins.scss";
+
+.btn {
+    @include flexbox(center, center);
+    padding: 8px 12px;
+    margin: 3px;
+    color: var(--white);
+    background-color: var(--red);
+    @include hover();
+    &:hover {
+        background-color: var(--red-d);
+        color: var(--white);
+    }
+}
+.one-screen{
+    height: 100vh;
+}

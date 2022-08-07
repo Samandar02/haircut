@@ -1,0 +1,29 @@
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200";
+@import "./styles/forms.scss";
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    
+}
+:root{
+    --white:#FFFFFF;
+    --black:#000000D9;
+    --red:#EB1616;
+    --red-d:#ca1a1a;
+    --blue-d:#191C24;
+    --blue:#212529;
+    --blue-l:#6C7293;    
+}
+p{
+    color: var(--blue-d);
+}
+a{
+    color: var(--blue-l);
+    text-decoration: none;
+    &:hover{
+        color: var(--red);
+    }
+}

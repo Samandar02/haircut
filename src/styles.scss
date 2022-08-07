@@ -8,9 +8,12 @@
     font-family: 'Oswald', sans-serif;
     
 }
+html{
+    background-color: var(--black);
+}
 :root{
     --white:#FFFFFF;
-    --black:#000000D9;
+    --black:#000000;
     --red:#EB1616;
     --red-d:#ca1a1a;
     --blue-d:#191C24;

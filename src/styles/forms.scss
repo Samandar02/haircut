@@ -7,11 +7,24 @@
     color: var(--white);
     background-color: var(--red);
     @include hover();
+
     &:hover {
         background-color: var(--red-d);
         color: var(--white);
     }
 }
-.one-screen{
+
+.one-screen {
     min-height: 100vh;
+}
+
+.section-title {
+    padding: 6px 8px;
+    color: var(--red);
+    background-color: var(--blue-d);
+    display: inline-block;
+}
+.row{
+    padding: 16px 3px;
+    @include flexbox();
 }

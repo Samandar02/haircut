@@ -42,8 +42,10 @@ nav {
     img {
         filter: brightness(.23);
     }
+
     .hero-content {
         position: relative;
+
         .hero-title {
             position: absolute;
             left: 120px;
@@ -53,13 +55,16 @@ nav {
             max-width: 900px;
             z-index: 1;
         }
-        .hero-text{
-            p{
+
+        .hero-text {
+            p {
                 color: var(--white);
             }
-            span{
+
+            span {
                 color: var(--red);
             }
+
             position: absolute;
             left: 170px;
             top: 500px;
@@ -67,6 +72,46 @@ nav {
             font-size: 24px;
             z-index: 1;
 
+        }
+    }
+}
+
+.about {
+    @include flexbox(space-around, flex-start);
+    padding-top: 120px;
+    .image {
+        position: relative;
+        img {
+            margin-left: 160px;
+            width: 459px;
+            height: 459px;
+        }
+        .experience{
+            position: absolute;
+            width: 263px;
+            bottom: -42px;
+            left: 90px;
+            background-color: var(--blue-d);
+            span{
+                color: var(--red);
+            }
+            h1{
+                font-size: 42px;
+                width: 100%;
+                padding: 42px 24px;
+                color: var(--white);
+            }
+        }
+    }
+    .about-us{
+        width: 47%;
+        h1{
+            color: var(--white);
+            font-size: 32px;
+            padding: 12px 0;
+        }
+        p{
+            color: var(--blue-l);
         }
     }
 }

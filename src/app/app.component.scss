@@ -79,23 +79,28 @@ nav {
 .about {
     @include flexbox(space-around, flex-start);
     padding-top: 120px;
+
     .image {
         position: relative;
+
         img {
             margin-left: 160px;
             width: 459px;
             height: 459px;
         }
-        .experience{
+
+        .experience {
             position: absolute;
             width: 263px;
             bottom: -42px;
             left: 90px;
             background-color: var(--blue-d);
-            span{
+
+            span {
                 color: var(--red);
             }
-            h1{
+
+            h1 {
                 font-size: 42px;
                 width: 100%;
                 padding: 42px 24px;
@@ -103,15 +108,170 @@ nav {
             }
         }
     }
-    .about-us{
+
+    .about-us {
         width: 47%;
-        h1{
+
+        h1 {
             color: var(--white);
             font-size: 32px;
             padding: 12px 0;
         }
-        p{
+
+        p {
             color: var(--blue-l);
+        }
+    }
+}
+
+.services {
+    margin-top: 92px;
+    text-align: center;
+
+    h1 {
+        padding: 24px 12px;
+        color: var(--white);
+    }
+
+    .centainer {
+        @include flexbox();
+        flex-wrap: wrap;
+
+        .card {
+            margin: 12px;
+            display: inline-block;
+            background-color: var(--blue-d);
+            width: 400px;
+            position: relative;
+            @include flexbox(space-around, flex-start);
+
+            img {
+                margin-top: 32px;
+                background-color: var(--black);
+                padding: 18px;
+            }
+
+            h2 {
+                padding: 12px;
+                color: var(--white);
+            }
+
+            p {
+                width: 72%;
+                text-align: start;
+                padding: 12px 24px;
+                color: var(--blue-l);
+
+                &:last-child {
+                    padding-bottom: 24px;
+                    color: var(--red);
+                }
+            }
+
+            .add {
+                cursor: pointer;
+                z-index: 0;
+                width: 52px;
+                height: 52px;
+                padding: 12px;
+                position: absolute;
+                color: var(--red);
+                background-color: var(--black);
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                @include hover(all, .3s);
+            }
+
+            &:hover>.add {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.price-plan {
+    .row {
+        padding: 0;
+        margin: auto;
+        margin-top: 64px;
+        width: 88%;
+        background-color: var(--blue-d);
+        align-items: flex-start;
+
+        .col:first-child {
+            padding: 94px 54px;
+            .title{
+                padding: 16px 0;
+            }
+            table {
+                margin-top: 24px;
+                border-collapse: collapse;
+                width: 100%;
+
+                span {
+                    color: var(--red);
+                }
+
+                tr {
+                    td {
+                        padding: 16px;
+                        border-bottom: 1px solid var(--blue-l);
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: var(--white);
+
+    }
+}
+.our-barber{
+    margin-top: 58px;
+    text-align: center;
+    h1{
+        padding: 24px;
+        color: var(--white);
+    }
+    .container{
+        .card{
+            width: 300px;
+            .img{
+
+                img{
+                    width: 100%;
+                }
+                &::after{
+                    content: "";
+                    width: 100px;
+                    height: 0;
+                    display: inline-block;
+                    background-color: white;
+                    color: black;
+                    @include hover();
+                }
+            }
+            .descripton{
+                background-color: var(--blue-d);
+                h1{
+                    padding: 12px 2px;
+                }
+                span{
+                    color: var(--red);
+                    display: inline-block;
+                    padding: 12px 2px;
+                }
+            }
+            &:hover .img::after{
+                height: 100px;
+            }
         }
     }
 }

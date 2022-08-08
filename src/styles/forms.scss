@@ -23,8 +23,15 @@
     color: var(--red);
     background-color: var(--blue-d);
     display: inline-block;
+    &.section-tite-dark{
+        background-color: var(--black);
+
+    }
 }
 .row{
     padding: 16px 3px;
     @include flexbox();
+}
+.caontainer{
+    @include flexbox(space-around,center);
 }

@@ -24,5 +24,20 @@ export class AppComponent {
     },
     nav: true
   }
-  
+  services = [
+    { iconName: 'https://technext.github.io/haircut/img/haircut.png', title: 'HAIRCUT', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
+    { iconName: 'https://technext.github.io/haircut/img/beard-trim.png', title: 'BEARD TRIM', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
+    { iconName: 'https://technext.github.io/haircut/img/mans-shave.png', title: 'MANS SHAVE', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
+    { iconName: 'https://technext.github.io/haircut/img/hair-dyeing.png', title: 'HAIR DYEING', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
+    { iconName: 'https://technext.github.io/haircut/img/mustache.png', title: 'MUSTACHE', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
+    { iconName: 'https://technext.github.io/haircut/img/stacking.png', title: 'STACKING', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
+  ]
+  prices = [
+    {service:'HAIRCUT',price:29},
+    {service:'BEARD TRIM',price:23},
+    {service:'MANS SHAVE',price:32},
+    {service:'HAIR DYEING',price:12},
+    {service:'MUSTACHE',price:23},
+    {service:'STACKING',price:34},
+  ]
 }

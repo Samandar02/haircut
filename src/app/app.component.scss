@@ -201,9 +201,11 @@ nav {
 
         .col:first-child {
             padding: 94px 54px;
-            .title{
+
+            .title {
                 padding: 16px 0;
             }
+
             table {
                 margin-top: 24px;
                 border-collapse: collapse;
@@ -233,45 +235,195 @@ nav {
 
     }
 }
-.our-barber{
+
+.our-barber {
     margin-top: 58px;
     text-align: center;
-    h1{
+
+    h1 {
         padding: 24px;
         color: var(--white);
     }
-    .container{
-        .card{
-            width: 300px;
-            .img{
 
-                img{
+    .container {
+        padding: 0 70px;
+        @include flexbox(space-around, center, wrap);
+
+        .card {
+            width: 300px;
+            height: 400px;
+            position: relative;
+
+            .img {
+                position: relative;
+                width: 300px;
+                height: 300px;
+
+                img {
+                    position: absolute;
+                    left: 0;
                     width: 100%;
+                    height: 100%;
                 }
-                &::after{
+
+                &::after,
+                &::before {
                     content: "";
-                    width: 100px;
-                    height: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 0;
+                    z-index: 1;
+                    height: 100%;
                     display: inline-block;
-                    background-color: white;
-                    color: black;
+                    background-color: rgba(black, .8);
                     @include hover();
+
                 }
+
+                &::before {
+                    left: 0;
+                }
+
+                &::after {
+                    right: 0;
+                }
+
             }
-            .descripton{
+
+            &:hover .img::after,
+            &:hover .img::before {
+                width: 50%;
+            }
+
+            &:hover .social {
+                opacity: 1;
+            }
+
+            .descripton {
                 background-color: var(--blue-d);
-                h1{
+
+                h1 {
                     padding: 12px 2px;
                 }
-                span{
+
+                span {
                     color: var(--red);
                     display: inline-block;
                     padding: 12px 2px;
                 }
             }
-            &:hover .img::after{
-                height: 100px;
+
+            .social {
+                position: absolute;
+                top: 125px;
+                left: 112px;
+                opacity: 0;
+                color: var(--red);
+                z-index: 1;
+                @include hover(all, .4s, cubic-bezier(1, -0.01, 1, .67));
             }
         }
+    }
+}
+
+.testimonial {
+    margin-top: 72px;
+    padding: 12px 70px;
+    color: var(--white);
+    text-align: center;
+
+    h1 {
+        margin: 24px 12px;
+    }
+
+    .content {
+        margin: 70px 2px;
+
+        p {
+            margin: auto;
+            margin-top: 24px;
+            width: 50%;
+            color: var(--blue-l);
+        }
+    }
+}
+
+.footer {
+    background-color: var(--blue-d);
+    padding: 70px 27px 46px 12px;
+    @include flexbox(space-around,flex-start);
+
+    h2 {
+        color: var(--white);
+        padding: 12px;
+    }
+
+    p {
+        padding: 12px;
+        ;
+        color: var(--blue-l);
+        vertical-align: middle;
+
+        a {
+            i {
+                padding-right: 4px;
+                color: var(--red);
+                opacity: 0;
+                @include hover();
+            }
+            &:hover i {
+                opacity: 1;
+            }
+
+        }
+
+    }
+    span {
+        margin-right: 8px;
+        background-color: var(--black);
+        color: var(--red);
+        padding: 8px;
+    }
+    .m36{
+        margin: 12px;
+    }
+    .txtinput{
+        position: relative;
+        .btn{
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+        input{
+           outline: none;
+           border: none;
+            padding: 12px;
+            width: 300px;
+            border: 4px solid transparent;
+            &:focus{
+                border: 4px solid rgba(red,.4);
+            }
+        }
+    }
+}
+.dev{
+   background-color: var(--blue-d); 
+}
+.up{
+    background-color: var(--red);
+    color: var(--white);
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 60px;
+    right: 100px;
+    cursor: pointer;
+    a{
+        &:hover{
+            color: var(--white);
+        }
+    }
+    span{
+        padding: 18px;
     }
 }

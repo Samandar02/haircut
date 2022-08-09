@@ -7,7 +7,7 @@
     color: var(--white);
     background-color: var(--red);
     @include hover();
-
+    cursor: pointer;
     &:hover {
         background-color: var(--red-d);
         color: var(--white);
@@ -31,6 +31,9 @@
 .row{
     padding: 16px 3px;
     @include flexbox();
+}
+.reverse{
+    flex-direction: row-reverse;
 }
 .caontainer{
     @include flexbox(space-around,center);

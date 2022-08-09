@@ -24,7 +24,7 @@
     </div>
 </nav>
 <section>
-    <div class="hero">
+    <div id="hero" class="hero">
         <owl-carousel-o [options]="heroOptions">
             <ng-container>
                 <ng-template carouselSlide>
@@ -176,21 +176,130 @@
         <div class="title">
             <h1>MEET OUR BARBER</h1>
             <div class="container">
-                <div class="card">
-                    <div class="img"><img src="assets/team-1.jpg" alt=""></div>
+                <div *ngFor="let barber of ourTeam" class="card">
+                    <div class="img"><img [src]="barber.img"></div>
                     <div class="descripton">
-                        <h1>Fredorica</h1>
-                        <span>Designation</span>
+                        <h1>{{barber.name}}</h1>
+                        <span>{{barber.designation}}</span>
                     </div>
                     <div class="social">
                         <div class="item">
-                            p
+                            facebook
                         </div>
-                        <div class="item"></div>
-                        <div class="item"></div>
+                        <div class="item">tweeter</div>
+                        <div class="item">instagram</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<section>
+    <div class="price-plan">
+        <div class="row reverse">
+            <div class="col">
+                <div class="section-title section-tite-dark">
+                    Working Hours
+                </div>
+                <div class="title">
+                    <h1>PROFESSIONAL BARBERS ARE WAITING FOR YOU</h1>
+                </div>
+                <table>
+                    <tr *ngFor="let plan of workingHurs">
+                        <td>
+                            <h4>{{plan.week}}</h4>
+                        </td>
+                        <td>
+                            <span style="color: var(--white);">{{plan.hour}}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col">
+                <img src="assets/open.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="testimonial">
+        <div class="section-title">Testimonioal</div>
+        <h1>WHAT OUR CLIENTS SAY!</h1>
+        <owl-carousel-o [options]="testimonialOptions">
+            <ng-container>
+                <ng-template carouselSlide>
+                    <div class="content">
+                        <div class="head">
+                            <h2>Client Name</h2>
+                        </div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea natus assumenda saepe. Lorem
+                            ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorem at totam commodi dolore
+                            culpa velit, molestiae facilis qui quasi libero voluptas sequi.</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+            <ng-container>
+                <ng-template carouselSlide>
+                    <div class="content">
+                        <div class="head">
+                            <h2>Client Name</h2>
+                        </div>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea natus assumenda saepe. Lorem
+                            ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorem at totam commodi dolore
+                            culpa velit, molestiae facilis qui quasi libero voluptas sequi.</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</section>
+<footer>
+    <div class="footer">
+        <div class="in-touch">
+            <h2>Get in touch</h2>
+            <p><span class="material-symbols-outlined">
+                    pin_drop
+                </span> 123 Street, New York, USA</p>
+            <p><span class="material-symbols-outlined">
+                    call
+                </span>+998974908957</p>
+            <p><span class="material-symbols-outlined">
+                    drafts
+                </span>uchqunovsamandar31@gmail.com</p>
+        </div>
+        <div class="links">
+            <h2>Quick links</h2>
+            <p><a href=""><i>></i> About us</a></p>
+            <p><a href=""><i>></i>Contact us</a></p>
+            <p><a href=""><i>></i>Our Services</a></p>
+            <p><a href=""><i>></i>Teams</a></p>
+            <p><a href=""><i>></i>Support</a></p>
+        </div>
+        <div class="newsletter">
+            <h2>News Letter</h2>
+            <div class="txtinput">
+                <div class="btn">Sign Up</div>
+                <input type="text" name="" id="">
+            </div>
+            <span class="material-symbols-outlined">
+                drafts
+            </span><span class="m36 material-symbols-outlined">
+                drafts
+            </span><span class="m36 material-symbols-outlined">
+                drafts
+            </span><span class="m36 material-symbols-outlined">
+                drafts
+            </span>
+        </div>
+    </div>
+    <div class="dev">
+        <div class="name">
+            Designer:Samandar
+        </div>
+    </div>
+</footer>
+<div class="up">
+   <a href="#hero"> <span class="m36 material-symbols-outlined">
+    arrow_upward
+</span></a>
+</div>

@@ -24,6 +24,23 @@ export class AppComponent {
     },
     nav: true
   }
+  testimonialOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 900,
+    navText: ['<i class="carousel-btn"><</i>',
+      '<i class="carousel-btn">></i>'],
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 1
+      }
+    },
+    nav: true
+  }
   services = [
     { iconName: 'https://technext.github.io/haircut/img/haircut.png', title: 'HAIRCUT', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
     { iconName: 'https://technext.github.io/haircut/img/beard-trim.png', title: 'BEARD TRIM', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },
@@ -39,5 +56,20 @@ export class AppComponent {
     {service:'HAIR DYEING',price:12},
     {service:'MUSTACHE',price:23},
     {service:'STACKING',price:34},
+  ]
+  ourTeam = [
+    {img:'assets/team-1.jpg',name:'Barber Name',designation:'Designation'},
+    {img:'assets/team-2.jpg',name:'Barber Name',designation:'Designation'},
+    {img:'assets/team-3.jpg',name:'Barber Name',designation:'Designation'},
+    {img:'assets/team-4.jpg',name:'Barber Name',designation:'Designation'},
+
+  ]
+  workingHurs = [
+    {week:"Monday",hour:'9 AM - 9 PM'},
+    {week:"Tuesday",hour:'9 AM - 9 PM'},
+    {week:"Wednesday",hour:'9 AM - 9 PM'},
+    {week:"Thursday",hour:'9 AM - 9 PM'},
+    {week:"Friday",hour:'9 AM - 9 PM'},
+    {week:"Sat/Sun",hour:'CLOSED'},
   ]
 }

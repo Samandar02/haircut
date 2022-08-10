@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
+import * as AOS from 'aos'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(){
+    AOS.init({
+      delay:300,
+      mirror:true,
+      once:false
+      
+    });
+    document.addEventListener('scroll',()=>{
+      document.querySelector('.up')?.classList.toggle('active',window.scrollY >= 800)
+    })
+  }
+  scrollTop(){
+    window.scrollTo({top:0,behavior:'smooth'})
+  }
   heroOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -29,7 +43,7 @@ export class AppComponent {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 900,
     navText: ['<i class="carousel-btn"><</i>',
       '<i class="carousel-btn">></i>'],
@@ -39,7 +53,7 @@ export class AppComponent {
         items: 1
       }
     },
-    nav: true
+    nav: false
   }
   services = [
     { iconName: 'https://technext.github.io/haircut/img/haircut.png', title: 'HAIRCUT', body: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam.', price: 'FROM $15' },

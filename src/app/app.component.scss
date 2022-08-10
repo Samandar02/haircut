@@ -200,8 +200,10 @@ nav {
         align-items: flex-start;
 
         .col:first-child {
-            padding: 94px 54px;
-
+            padding: 0px 54px;
+            .section-title{
+                margin-top: 24px;
+            }
             .title {
                 padding: 16px 0;
             }
@@ -250,10 +252,10 @@ nav {
         @include flexbox(space-around, center, wrap);
 
         .card {
+            margin: 12px;
             width: 300px;
             height: 400px;
             position: relative;
-
             .img {
                 position: relative;
                 width: 300px;
@@ -262,6 +264,7 @@ nav {
                 img {
                     position: absolute;
                     left: 0;
+                    top: 0;
                     width: 100%;
                     height: 100%;
                 }
@@ -302,7 +305,9 @@ nav {
             .descripton {
                 background-color: var(--blue-d);
 
-                h1 {
+                h3 {
+                    color: var(--white);
+                    margin: 0;
                     padding: 12px 2px;
                 }
 
@@ -365,6 +370,7 @@ nav {
         vertical-align: middle;
 
         a {
+            text-decoration: none;
             i {
                 padding-right: 4px;
                 color: var(--red);
@@ -373,6 +379,10 @@ nav {
             }
             &:hover i {
                 opacity: 1;
+            }
+            &:hover{
+
+                transform: scale(2);
             }
 
         }
@@ -416,7 +426,10 @@ nav {
     width: 60px;
     height: 60px;
     bottom: 60px;
-    right: 100px;
+    right: 60px;
+    opacity: 0;
+    visibility: hidden;
+    @include hover();
     cursor: pointer;
     a{
         &:hover{
@@ -426,4 +439,8 @@ nav {
     span{
         padding: 18px;
     }
+}
+.up.active{
+    opacity: 1;
+    visibility: visible;
 }

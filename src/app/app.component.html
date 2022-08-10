@@ -23,7 +23,7 @@
         </ul>
     </div>
 </nav>
-<section>
+<main>
     <div id="hero" class="hero">
         <owl-carousel-o [options]="heroOptions">
             <ng-container>
@@ -54,9 +54,7 @@
                 <ng-template carouselSlide>
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            <span class="material-symbols-outlined">
-                                call
-                            </span>LUXURY HAIRCUT AT AFFORDABLE PRICE
+                            LUXURY HAIRCUT AT AFFORDABLE PRICE
                         </h1>
                         <div class="hero-text">
                             <p class="">
@@ -79,16 +77,16 @@
             </ng-container>
         </owl-carousel-o>
     </div>
-</section>
+</main>
 <section>
     <div class="about">
-        <div class="image">
+        <div data-aos="fade-up" class="image">
             <img src="assets/about.jpg" alt="">
             <div class="experience">
                 <h1><span>25 Years</span> Experience </h1>
             </div>
         </div>
-        <div class="about-us">
+        <div  data-aos="fade-down" class="about-us">
             <div class="section-title">About Us</div>
             <div class="row">
                 <h1>MORE THAN JUST A HAIRCUT. LEARN MORE ABOUT US!</h1>
@@ -123,7 +121,7 @@
         <div class="section-title">Services</div>
         <h1>WHAT WE PROVIDE</h1>
         <div class="centainer">
-            <div *ngFor="let service of services" class="card">
+            <div data-aos="fade-up" [attr.data-aos-delay]="300*(i+1)" *ngFor="let service of services;index as i" class="card">
                 <div class="icon">
                     <img [src]="service.iconName" alt="" srcset="">
                 </div>
@@ -143,7 +141,7 @@
 </section>
 <section>
     <div class="price-plan">
-        <div class="row">
+        <div data-aos="fade-up" data-aos-delay="100" class="row">
             <div class="col">
                 <div class="section-title section-tite-dark">
                     Price & Plan
@@ -162,24 +160,24 @@
                     </tr>
                 </table>
             </div>
-            <div class="col">
+            <div data-aos="fade-down" data-aos-delay="200" class="col">
                 <img src="assets/price.jpg" alt="">
             </div>
         </div>
     </div>
 </section>
 <section>
-    <div class="our-barber">
+    <div data-aos="fade-up" data-aos-delay="100" class="our-barber">
         <div class="section-title">
             Our Barber
         </div>
         <div class="title">
             <h1>MEET OUR BARBER</h1>
             <div class="container">
-                <div *ngFor="let barber of ourTeam" class="card">
+                <div data-aos="fade-up" [attr.data-aos-delay]="300*(i+1)" *ngFor="let barber of ourTeam;index as i" class="card">
                     <div class="img"><img [src]="barber.img"></div>
                     <div class="descripton">
-                        <h1>{{barber.name}}</h1>
+                        <h3>{{barber.name}}</h3>
                         <span>{{barber.designation}}</span>
                     </div>
                     <div class="social">
@@ -196,7 +194,7 @@
 </section>
 <section>
     <div class="price-plan">
-        <div class="row reverse">
+        <div data-aos="fade-down" data-aos-delay="100" class="row reverse">
             <div class="col">
                 <div class="section-title section-tite-dark">
                     Working Hours
@@ -215,17 +213,17 @@
                     </tr>
                 </table>
             </div>
-            <div class="col">
+            <div data-aos="fade-up" data-aos-delay="300" class="col">
                 <img src="assets/open.jpg" alt="">
             </div>
         </div>
     </div>
 </section>
 <section>
-    <div class="testimonial">
+    <div data-aos="fade-up" data-aos-delay="100" class="testimonial">
         <div class="section-title">Testimonioal</div>
         <h1>WHAT OUR CLIENTS SAY!</h1>
-        <owl-carousel-o [options]="testimonialOptions">
+        <owl-carousel-o data-aos="fade-up" data-aos-delay="300" [options]="testimonialOptions">
             <ng-container>
                 <ng-template carouselSlide>
                     <div class="content">
@@ -299,7 +297,7 @@
     </div>
 </footer>
 <div class="up">
-   <a href="#hero"> <span class="m36 material-symbols-outlined">
+   <a (click)="scrollTop()"> <span class="m36 material-symbols-outlined">
     arrow_upward
 </span></a>
 </div>

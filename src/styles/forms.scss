@@ -31,6 +31,10 @@
 .row{
     padding: 16px 3px;
     @include flexbox();
+    @include responsive(l){
+        flex-wrap: wrap;
+
+    }
 }
 .reverse{
     flex-direction: row-reverse;

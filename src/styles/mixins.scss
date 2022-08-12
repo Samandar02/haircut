@@ -14,3 +14,33 @@
     $timing: linear, ) {
     transition: $selector $duration $timing;
 }
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint ==m {
+
+        @media (max-width: 425px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==t {
+
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==l {
+
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==d {
+
+        @media (max-width: 1440px) {
+            @content;
+        }
+    }
+}

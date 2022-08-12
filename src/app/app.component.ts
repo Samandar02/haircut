@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as AOS from 'aos'
 @Component({
@@ -7,16 +7,12 @@ import * as AOS from 'aos'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  @HostListener('window:scroll') onSacsroll(){
+    document.querySelector('.up')?.classList.toggle('active',window.scrollY >= 800)
+  }
+  
   ngOnInit(){
-    AOS.init({
-      delay:300,
-      mirror:true,
-      once:false
-      
-    });
-    document.addEventListener('scroll',()=>{
-      document.querySelector('.up')?.classList.toggle('active',window.scrollY >= 800)
-    })
+    AOS.init({delay:50,once:true}); 
   }
   scrollTop(){
     window.scrollTo({top:0,behavior:'smooth'})

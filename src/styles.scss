@@ -1,52 +1,85 @@
 @import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200";
 @import "./styles/forms.scss";
 
-*,*::before,*::after{
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
-    
+
 }
-html{
+
+html {
     background-color: var(--black);
 }
-body{
+
+body {
     background-color: var(--black);
 }
-:root{
-    --white:#FFFFFF;
-    --black:#000000;
-    --red:#EB1616;
-    --red-d:#ca1a1a;
-    --blue-d:#191C24;
-    --blue:#212529;
-    --blue-l:#6C7293;    
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --red: #EB1616;
+    --red-d: #ca1a1a;
+    --blue-d: #191C24;
+    --blue: #212529;
+    --blue-l: #6C7293;
 }
-p{
+
+p {
     color: var(--blue-d);
 }
-a{
+
+a {
     color: var(--blue-l);
     text-decoration: none;
-    &:hover{
+
+    &:hover {
         color: var(--red);
     }
 }
 
-.owl-next{
+.owl-next {
     background-color: transparent !important;
     position: absolute;
     top: 40% !important;
     right: 72px;
     font-size: 72px !important;
     font-weight: 100;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    @include responsive(l) {
+        right: 20px;
+        background-color: rgba(white, .2) !important;
+        width: 40px;
+        height: 40px;
+        font-size: 30px !important;
+        font-weight: 100;
+        border-radius: 50% !important;
+    }
 }
-.owl-prev{
+
+.owl-prev {
     font-weight: 100;
     background-color: transparent !important;
     position: absolute;
     top: 40% !important;
     left: 72px;
     font-size: 72px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    @include responsive(l) {
+        left: 20px;
+        background-color: rgba(white, .2) !important;
+        width: 40px;
+        height: 40px;
+        font-size: 30px !important;
+        font-weight: 100;
+        border-radius: 50% !important;
+    }
 }

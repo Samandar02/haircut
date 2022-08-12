@@ -1,8 +1,8 @@
 @import "../styles/mixins.scss";
 
 nav {
-    position: fixed;
-    top: 0;
+    position: sticky;
+    top: -2px;
     left: 0;
     z-index: 2;
     width: 100%;
@@ -11,6 +11,7 @@ nav {
     padding: 8px 12px;
     @include flexbox(space-between, center);
     @include hover();
+    
 
     .brand {
         color: red;
@@ -19,6 +20,12 @@ nav {
     }
 
     .menu {
+        @include responsive(m) {
+            opacity: 0;
+            visibility: hidden;
+            @include hover();
+        }
+
         ul {
             list-style: none;
 
@@ -28,6 +35,25 @@ nav {
 
             }
         }
+    }
+
+    input[type=checkbox] {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        &:checked~.menu {
+            visibility: visible;
+            opacity: 1;
+            position: relative;
+            right: 0; top: 0;
+        }
+        
+    
+   
+
     }
 
 }
@@ -47,6 +73,23 @@ nav {
         position: relative;
 
         .hero-title {
+            @include responsive(l) {
+                font-size: 39px;
+                top: 190px;
+            }
+
+            @include responsive(t) {
+                font-size: 39px;
+                top: 190px;
+                width: 500px;
+            }
+
+            @include responsive(m) {
+                font-size: 20px;
+                top: 19px;
+                width: 300px;
+            }
+
             position: absolute;
             left: 120px;
             top: 150px;
@@ -65,6 +108,16 @@ nav {
                 color: var(--red);
             }
 
+            @include responsive(l) {
+                top: 50px;
+            }
+
+            @include responsive(m) {
+                top: 106px;
+                left: 15%;
+                font-size: 12px;
+            }
+
             position: absolute;
             left: 170px;
             top: 500px;
@@ -79,21 +132,27 @@ nav {
 .about {
     @include flexbox(space-around, flex-start);
     padding-top: 120px;
+    flex-wrap: wrap;
 
     .image {
         position: relative;
 
         img {
-            margin-left: 160px;
+            margin-left: 20%;
             width: 459px;
             height: 459px;
+
+            @include responsive(m) {
+                margin: 0;
+                width: 320px;
+            }
         }
 
         .experience {
             position: absolute;
             width: 263px;
             bottom: -42px;
-            left: 90px;
+            left: 20%;
             background-color: var(--blue-d);
 
             span {
@@ -201,9 +260,15 @@ nav {
 
         .col:first-child {
             padding: 0px 54px;
-            .section-title{
+
+            @include responsive(m) {
+                padding: 0;
+            }
+
+            .section-title {
                 margin-top: 24px;
             }
+
             .title {
                 padding: 16px 0;
             }
@@ -225,6 +290,12 @@ nav {
 
                 }
 
+            }
+        }
+
+        .col {
+            img {
+                width: 100%;
             }
         }
     }
@@ -249,13 +320,25 @@ nav {
 
     .container {
         padding: 0 70px;
-        @include flexbox(space-around, center, wrap);
+        @include flexbox(space-around, center);
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        @include responsive(t) {
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        @include responsive(m) {
+            padding: 0;
+        }
 
         .card {
             margin: 12px;
             width: 300px;
             height: 400px;
             position: relative;
+
             .img {
                 position: relative;
                 width: 300px;
@@ -356,7 +439,8 @@ nav {
 .footer {
     background-color: var(--blue-d);
     padding: 70px 27px 46px 12px;
-    @include flexbox(space-around,flex-start);
+    @include flexbox(space-around, flex-start);
+    flex-wrap: wrap;
 
     h2 {
         color: var(--white);
@@ -371,16 +455,19 @@ nav {
 
         a {
             text-decoration: none;
+
             i {
                 padding-right: 4px;
                 color: var(--red);
                 opacity: 0;
                 @include hover();
             }
+
             &:hover i {
                 opacity: 1;
             }
-            &:hover{
+
+            &:hover {
 
                 transform: scale(2);
             }
@@ -388,38 +475,46 @@ nav {
         }
 
     }
+
     span {
         margin-right: 8px;
         background-color: var(--black);
         color: var(--red);
         padding: 8px;
     }
-    .m36{
+
+    .m36 {
         margin: 12px;
     }
-    .txtinput{
+
+    .txtinput {
         position: relative;
-        .btn{
+
+        .btn {
             position: absolute;
             right: 3px;
             top: 3px;
         }
-        input{
-           outline: none;
-           border: none;
+
+        input {
+            outline: none;
+            border: none;
             padding: 12px;
             width: 300px;
             border: 4px solid transparent;
-            &:focus{
-                border: 4px solid rgba(red,.4);
+
+            &:focus {
+                border: 4px solid rgba(red, .4);
             }
         }
     }
 }
-.dev{
-   background-color: var(--blue-d); 
+
+.dev {
+    background-color: var(--blue-d);
 }
-.up{
+
+.up {
     background-color: var(--red);
     color: var(--white);
     position: fixed;
@@ -431,16 +526,19 @@ nav {
     visibility: hidden;
     @include hover();
     cursor: pointer;
-    a{
-        &:hover{
+
+    a {
+        &:hover {
             color: var(--white);
         }
     }
-    span{
+
+    span {
         padding: 18px;
     }
 }
-.up.active{
+
+.up.active {
     opacity: 1;
     visibility: visible;
 }

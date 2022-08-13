@@ -10,6 +10,11 @@ nav {
     background-color: var(--blue);
     padding: 8px 12px;
     @include flexbox(space-between, center);
+    @include responsive(m){
+        flex-direction: column;
+        max-height: 500px;
+
+    }
     @include hover();
 
 
@@ -22,6 +27,7 @@ nav {
     .menu {
         @include responsive(m) {
             opacity: 0;
+            height: 0px;
             visibility: hidden;
             @include hover();
         }
@@ -39,11 +45,40 @@ nav {
 
     input[type=checkbox] {
         position: fixed;
-        width: 200px;
-        height: 200px;
+        width: 30px;
+        height: 30px;
         top: 0;
         left: 0;
-        opacity: 0;
+        visibility: hidden;
+        &::after,&::before{
+            visibility: visible;
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 4px;
+            background-color: red;
+            position: absolute;
+            border-radius: 12px;
+            @include hover(all,.3s,cubic-bezier(0, 0, 1, 1.43));
+        }
+        &::before{
+            left: 12px;
+            top: 12px;
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 6px;
+            background-color: red;
+        }
+        &::after{
+            left: 12px;
+            top: 24px;
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 6px;
+            background-color: red;
+        }
 
         &:checked~.menu {
             visibility: visible;
@@ -51,6 +86,16 @@ nav {
             position: relative;
             right: 0;
             top: 0;
+            height: auto;
+        }
+        &:checked::after {
+            transform:rotate(45deg) 
+                        translate(-2px,-6px)
+
+        }
+        &:checked::before {
+            transform:rotate(-45deg) 
+                        translate(-2px,6px);
         }
 
 
@@ -90,6 +135,7 @@ nav {
                 font-size: 20px;
                 top: 19px;
                 width: 300px;
+                left: 12%;
             }
 
             position: absolute;
@@ -147,6 +193,7 @@ nav {
             @include responsive(m) {
                 margin: 0;
                 width: 320px;
+                height: 320px;
             }
         }
 
@@ -156,7 +203,9 @@ nav {
             bottom: -42px;
             left: 20%;
             background-color: var(--blue-d);
-
+            @include responsive(m) {
+                left: 12%;
+            }
             span {
                 color: var(--red);
             }

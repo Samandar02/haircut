@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "e-commerce": {
+    "haircut": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/e-commerce",
+            "outputPath": "dist/haircut",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,11 +30,9 @@
             "styles": [
               "src/styles.scss",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
-              "node_modules/aos/src/sass/aos.scss"
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
             ],
             "scripts": [
-              "node_modules/aos/src/js/aos.js"
             ]
           },
           "configurations": {
@@ -74,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "e-commerce:build:production"
+              "browserTarget": "haircut:build:production"
             },
             "development": {
-              "browserTarget": "e-commerce:build:development"
+              "browserTarget": "haircut:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "e-commerce:build"
+            "browserTarget": "haircut:build"
           }
         },
         "test": {

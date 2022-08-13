@@ -11,7 +11,7 @@ nav {
     padding: 8px 12px;
     @include flexbox(space-between, center);
     @include hover();
-    
+
 
     .brand {
         color: red;
@@ -44,15 +44,17 @@ nav {
         top: 0;
         left: 0;
         opacity: 0;
+
         &:checked~.menu {
             visibility: visible;
             opacity: 1;
             position: relative;
-            right: 0; top: 0;
+            right: 0;
+            top: 0;
         }
-        
-    
-   
+
+
+
 
     }
 

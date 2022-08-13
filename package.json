@@ -1,5 +1,5 @@
 {
-  "name": "e-commerce",
+  "name": "haircut",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,7 +18,6 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "aos": "^2.3.4",
     "ngx-owl-carousel-o": "^14.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -10,7 +10,7 @@ nav {
     background-color: var(--blue);
     padding: 8px 12px;
     @include flexbox(space-between, center);
-    @include responsive(m){
+    @include responsive(t){
         flex-direction: column;
         max-height: 500px;
 
